@@ -945,9 +945,26 @@ body.open .header-nav {
   background: #244c66;
 }
 .footer-copyright {
+  margin-top: 10px;
   font-size: $font-sm;
   text-align: center;
   color: $cWhite;
+}
+
+.sns-twitter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  & > p {
+    font-size: 14px;
+    color: #f9f9f9;
+  }
+}
+
+.fa-twitter {
+  color: #7bade3;
 }
 
 /*============================================================
