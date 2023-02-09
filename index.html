@@ -7,22 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUGIMOTO ATUSHI</title>
     <meta name="discription" content="ウェブコーダー,スギモトアツシ（Sugimoto Atsushi）のポートフォリオサイトです。最後まで丁寧にを大切にしながら制作に携わっています。">
-    <meta property="og:url" content="https://transcendent-meerkat-3074b8.netlify.app" />
+    <meta property="og:url" content="https://sugimoto-atsushi.netlify.app" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="SUGIMOTO ATSUSHI" />
     <meta property="og:description"
         content="ウェブコーダー,スギモトアツシ（Sugimoto Atsushi）のポートフォリオサイトです。最後まで丁寧にを大切にしながら制作に携わっています。" />
     <meta property="og:site_name" content="SUGIMOTO ATSUSHI" />
-    <meta property="og:image" content="./images/sns.jpg" />
+    <meta property="og:image" content="https://sugimoto-atsushi.netlify.app/images/sns.jpg" />
     <!-- favicon -->
     <link rel="icon" href="./images/favicon-16x16.png">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- Reset CSS -->
     <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
-    <!-- Swiper link -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css?ver=5.8.2">
+    <!-- wow -->
+    <link rel="stylesheet" href="./css/animate.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -33,7 +34,7 @@
         <!-- .container -->
         <div class="container">
             <!-- .header-title -->
-            <h1 class="header-title">sugimoto atsushi<br><span>Web Coder</span></h1>
+            <h1 class="header-title">sugimoto&nbsp;atsushi<br><span>Portfolio</span></h1>
             <!-- / .header-title -->
 
             <!-- hambarger menu -->
@@ -44,7 +45,7 @@
             <nav class="header-nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="#about">About</a></li>
-                    <li class="nav-item"><a href="#service">Service</a></li>
+                    <li class="nav-item"><a href="#skills">Skills</a></li>
                     <li class="nav-item"><a href="#works">Works</a></li>
                     <li class="nav-item"><a href="#contact">Contact</a></li>
                 </ul>
@@ -53,176 +54,265 @@
         </div>
         <!-- / .container -->
 
-        <!-- copyright -->
-        <div class="copyright">
-            <p class="copyright-text"><small>&copy; 2022 Sugimoto Atushi's my PortForio</small></p>
-        </div>
-        <!-- / copyright -->
-
-        <!-- sns -->
-        <div class="sns">
-            <div class="sns-images">
-                <a href="https://twitter.com/webcoda_sugimo"><img src="./images/twitter.svg" alt="twitter"></a>
-                <a href="#"><img src="./images/facebook.svg" alt="facebook"></a>
-                <a href="#"><img src="./images/instagram.svg" alt="instagram"></a>
-            </div>
-            <p class="sns-text">SNS</p>
-        </div>
-        <!-- / .sns -->
-
-        <!-- down arrow アニメーション -->
-        <div class="arrow">
-            <div class="arrow-inner">
-                <img src="./images/arrow.png" alt="">
-                <span class="arrow-text-scroll">scroll</span>
-            </div>
-        </div>
-        <!-- / down arrow アニメーション -->
     </header>
 
-    <main>
+    <!-- copyright -->
+    <div class="copyright">
+        <p class="copyright-text"><small>&copy;2023&nbsp;Sugimoto&nbsp;Atsushi&nbsp;Portfolio</small></p>
+    </div>
+    <!-- / copyright -->
 
-        <!-- BootStrap gridシステム採用 -->
+    <!-- sns -->
+    <div class="sns">
+        <div class="sns-images">
+            <a href="https://twitter.com/webcoda_sugimo"><img src="./images/twitter.svg" alt="twitter"></a>
+        </div>
+        <p class="sns-text">SNS</p>
+    </div>
+    <!-- / .sns -->
+    <main>
 
         <!-- section about -->
         <section id="about" class="about section">
-            <!-- container -->
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <!-- row -->
-                <div class="row">
-                    <!-- about-image -->
-                    <div class="about-image col-md-6">
-                        <img src="./images/aboutMe.jpg" alt="杉本篤志">
-                    </div>
-                    <!-- / .about-image-->
-                    <div class="about-text col-md-6">
-                        <h3 class="about-name">SUGIMOTO ATUSHI</h3>
-                        <dt>- 自己紹介 -</dt>
-                        <dd>地元、大阪でホームページ制作を行っています。<br>
-                            デザインからのコーディングを組み込むことを得意としています。
-                            ホームページ製作のコーディング、修正、WordPressの実装までご対応いたします。</dd>
-                        <dt>- 大事にしていること -</dt>
-                        <dd>「最後まで、しっかり、丁寧に！」を大事にし、クライアント様のご要望にお答え致します。</dd>
+            <div class="about-background"></div>
+            <div class="about-container container">
+                <div class="about-cardarea">
+                    <h2 class="section-title about-title">About</h2>
+                    <div class="about-card">
+                        <div class="about-img">
+                            <img src="/images/IMG_6024.jpg" alt="about">
+                        </div>
+                        <div class="about-textarea">
+                            <p class="about-text">
+                                はじめまして、杉本篤志と申します。
+                                <br>
+                                現在、フリーランスのコーダーとして活動をしております。
+                                <br>
+                                <br>
+                                2013年に靴の専門商社の営業を2年経験した後に、妻の実家の家業である運送業のお手伝いをしてきました。
+                                <br>
+                                予てより趣味で始めたコーディングの勉強を本職にしたいと思い、
+                                2022年7月から本格的にオンラインスクール「デイトラ」にて、学習を進め、
+                                2023年1月からフリーランスのコーダーとして活動しております。
+                                <br>
+                                <br>
+                                営業職の時も、運送業の時も「人に話す」ということより、「人の話を聞く」ことを大事にしてきましたので、
+                                お困りごとなどあれば、なんでもご相談ください。
+                                <br>
+                                お客様と一緒に真摯に向き合って最後までやる！と心に決め、今後もがんばってまいります。
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <!-- / .row -->
-            </div>
-            <!-- / .container -->
         </section>
         <!-- / .section about -->
 
-        <!-- section service -->
-        <section id="service" class="section service">
-            <!-- container -->
-            <div class="container">
-                <h2 class="section-title">Service</h2>
-                <!-- row -->
-                <ul class="row">
-                    <li class="service-item col-md-4">
-                        <div class="service-item-image">
-                            <img src="./images/service01.jpg" alt="ホームページ製作">
+
+        <!-- section skills -->
+        <section id="skills" class="section skills">
+            <div class="skills-background"></div>
+            <div class="skills-container container">
+                <div class="skills-cardarea">
+                    <h2 class="section-title skills-title">Skills</h2>
+                    <div class="skills-card">
+                        <div class="skills-img">
+                            <img src="/images/jeff-sheldon-mKxdiW2QEkE-unsplash.jpg" alt="">
                         </div>
-                        <h3>ホームページ制作</h3>
-                        <p class="service-text">ご要望に応じて柔軟にご対応させていただきます。目的を達成するためのホームページになるように尽力いたします。</p>
-                    </li>
-                    <li class="service-item col-md-4">
-                        <div class="service-item-image">
-                            <img src="./images/service02.jpg" alt="ホームページ修正">
+                        <div class="skills-textarea">
+                            <p class="skills-text-title">Coding&nbsp;Skills</p>
+                            <p class="skills-text">
+                                HTML
+                                CSS
+                                Sass
+                                Javascript
+                                JQuery
+                                gulp
+                                PHP
+                                WordPress
+                            </p>
+                            <p class="skills-text-title">Other</p>
+                            <p class="skills-text">
+                                AdobeXD
+                                Photoshop
+                            </p>
                         </div>
-                        <h3>ホームページ修正</h3>
-                        <p class="service-text">文章の変更から表示崩れなど、ホームページでのちょっとしたお困りごとに対応いたします。</p>
-                    </li>
-                    <li class="service-item col-md-4">
-                        <div class="service-item-image">
-                            <img src="./images/service03.jpg" alt="ホームページ相談">
-                        </div>
-                        <h3>ホームページ相談</h3>
-                        <p class="service-text">ホームページに関するご相談を無料でお受けしております。些細なことでもお気軽にご相談ください。</p>
-                    </li>
-                </ul>
-                <!-- / .row -->
-            </div>
-            <!-- / .container -->
+                    </div>
+                    <ul class="skills-lists">
+                        <li class="skills-list">
+                            HTMLやCSSを使った静的サイトの作成
+                        </li>
+                        <li class="skills-list">
+                            JavascriptやJQueryを使ったフワッと動くアニメーションの実装
+                        </li>
+                        <li class="skills-list">
+                            PHPとGoogleフォームを使った静的サイトでのコンタクトフォーム実装
+                        </li>
+                        <li class="skills-list">
+                            Wordpressでのオリジナルテーマの実装
+                        </li>
+                    </ul>
+                    <p class="skills-footer-text">
+                        上記のような実装以外にもご対応させて頂きますので、お気軽にご相談ください。
+                        <br>
+                        また、納品後から２週間は不具合や変更などあればご対応させて頂きます。
+                        <br>
+                        <span class="skills-footer-text-span">※ 実装工程が多い追加項目があれば、別途ご請求させて頂きます。</span>
+                    </p>
+                </div>
         </section>
 
-        <!-- / .section service -->
-
-        <!-- section works -->
-        <section id="works" class=" section works">
-            <!-- container -->
-            <div class="container">
-                <h2 class="section-title">Work</h2>
-                <!-- work-inner -->
-                <div class="works-inner">
-                    <!-- swiper -->
+        <div id="works" class="works-bg-container">
+            <section class="works inner section">
+                <h2 class="section-title works-title wow fadeInUp">Works</h2>
+                <div class="works-card">
+                    <!-- Slider main container -->
                     <div class="swiper">
                         <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide">
-                              <div class="swiper-inner">
-                                  <div class="swiper-image">
-                                      <img src="./images/work1.jpg" alt="work1">
-                                  </div>
-                                  <h3>クリスタ様のデモサイト1</h3>
-                                  <p>クリスタ様のデモサイトをデザインカンプ を基にコーディングしました。上部のナビゲーションをスクロール途中から表示させるスティッキーヘッダーを組み込んでいます。
-                                  </p>
-                              </div>
-                          </div>
-                          <div class="swiper-slide">
-                              <div class="swiper-inner">
-                                  <div class="swiper-image">
-                                      <img src="./images/work2.jpg" alt="work2">
-                                  </div>
-                                  <h3>クリスタ様のデモサイト1</h3>
-                                  <p>引き続きクリスタ様のデモサイトをデザインカンプ を基にコーディングしたものとなります。メインビジュアルの画像が自動で切り替わるよう実装しました。</p>
-                              </div>
-                          </div>
-                        </div>
+                        <ul class="swiper-wrapper">
+                            <!-- Slides -->
+                            <li class="swiper-slide wow fadeInUp">
+                                <a href="#" class="works-card-item-link">
+                                    <div class="works-card-item-header">
+                                        <img src="/images/screenshot.png" alt="スライド写真1枚目">
+                                    </div>
+                                    <div class="works-text-area">
+                                        <p class="works-card-text">WordPress</p>
+                                    </div>
+                                    <p class="works-card-text-sub">ユーザー名/パスワード&nbsp;「work01」
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide wow fadeInUp">
+                                <a href="#" class="works-card-item-link">
+                                    <div class="works-card-item-header">
+                                        <img src="/images/image2.png" alt="スライド写真2枚目">
+                                    </div>
+                                    <div class="works-text-area">
+                                        <p class="works-card-text">HTML & CSS & Javascript</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide wow fadeInUp">
+                                <a href="#" class="works-card-item-link">
+                                    <div class="works-card-item-header">
+                                        <img src="/images/image3.png" alt="スライド写真1枚目">
+                                    </div>
+                                    <div class="works-text-area">
+                                        <p class="works-card-text">HTML & CSS & Javascript</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide wow fadeInUp">
+                                <a href="#" class="works-card-item-link">
+                                    <div class="works-card-item-header">
+                                        <img src="/images/image4.png" alt="スライド写真3枚目">
+                                    </div>
+                                    <div class="works-text-area">
+                                        <p class="works-card-text">HTML & CSS & Javascript</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide wow fadeInUp">
+                                <a href="#" class="works-card-item-link">
+                                    <div class="works-card-item-header">
+                                        <img src="/images/image5.png" alt="スライド写真4枚目">
+                                    </div>
+                                    <div class="works-text-area">
+                                        <p class="works-card-text">HTML & CSS & Javascript</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide wow fadeInUp">
+                                <a href="#" class="works-card-item-link">
+                                    <div class="works-card-item-header">
+                                        <img src="/images/image6.png" alt="スライド写真5枚目">
+                                    </div>
+                                    <div class="works-text-area">
+                                        <p class="works-card-text">HTML & CSS & Javascript</p>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
                         <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
-                      
-                        <!-- If we need scrollbar -->
-                        <div class="swiper-scrollbar"></div>
-                      </div>
-                      <!-- / .swiper -->
+                        <div class="swiper-pagination wow fadeInUp"><span></span></div>
+                    </div>
                 </div>
-                <!-- / .work inner -->
-            </div>
-            <!-- / .container -->
-        </section>
-        <!-- / .section works -->
+                <!-- /.works-card -->
+                <!-- <div class="works-btn-area">
+                    <a href="#" class="btn btn-works"><span>view&nbsp;more</span></a>
+                </div> -->
+            </section>
+            <!-- /#works.works inner section -->
+        </div>
+        <!-- /.works-bg-container -->
+
+
+
+
+        <!-- / .section skills -->
 
         <!-- section contact -->
-        <section id="contact" class="section contact">
-            <!-- container -->
-            <div class="container">
-                <!-- contact-inner -->
-                <div class="contact-inner">
-                    <h2 class="section-title">Contact</h2>
-                    <h3>「twiiter」「Fecebook」「Instagram」<br>各種SNSにてご相談ください。</h3>
-                    <!-- contact-box -->
-                    <ul class="contact-list">
-                        <li class="contact-item"><a href="https://twitter.com/webcoda_sugimo"><img src="./images/twitter.svg" alt="twitter"></a></li>
-                        <li class="contact-item"><a href="#"><img src="./images/facebook.svg" alt="facebook"></a></li>
-                        <li class="contact-item"><a href="#"><img src="./images/instagram.svg" alt="instagram"></a></li>
-                    </ul>
-                    <!-- / .contact-box -->
+        <section id="contact" class="contact inner">
+            <div class="contact-inner">
+                <div class="contact-head">
+                    <h2 class="section-title contact-title wow fadeInUp">Contact</h2>
                 </div>
-                <!-- / .contact-inner -->
+                <form id="js-form"
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdh8_BQ_1NiVLgqCsyLA4S8ffGNsCXIq0V2fGwrJNKnQ0i-UQ/formResponse"
+                    class="contact-form" method="post">
+                    <dl class="contact-list">
+                        <div class="contact-item">
+                            <dt class="contact-item-title">お名前</dt>
+                            <dd class="contact-item-input">
+                                <input type="text" name="entry.770330277" placeholder="お名前" required>
+                            </dd>
+                        </div>
+                        <div class="contact-item">
+                            <dt class="contact-item-title">メールアドレス</dt>
+                            <dd class="contact-item-input">
+                                <input type="email" name="entry.1510354538" placeholder="sample@gmail.com">
+                            </dd>
+                        </div>
+                        <div class="contact-item-textarea wow fadeInUp">
+                            <dt class="contact-item-title">ご用件内容</dt>
+                            <dd class="contact-item-input">
+                                <textarea name="entry.519737174"></textarea>
+                            </dd>
+                        </div>
+                    </dl>
+                    <div class="contact-footer">
+                        <div class="contact-footer-submit wow fadeInUp">
+                            <button id="js-submit" class="contact-btn" type="submit">送信する</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="js-success" class="contact-message">
+                    <p>送信完了しました。ありがとうございました。</p>
+                </div>
+                <div id="js-error" class="contact-message -error">
+                    <p>送信失敗しました。ページを更新して再度送信してください。</p>
+                </div>
             </div>
-            <!-- / .container -->
+            <!-- /.contact-inner -->
         </section>
-        <!-- / .section contact -->
-        
+        <!-- /#contact.contact inner section -->
+
     </main>
     <footer class="footer">
         <div class="container">
-            <p class="footer-copyright"><small>&copy; 2022 Sugimoto Atushi's my PortForio</small></p>
+            <p class="footer-copyright"><small>&copy;&nbsp;2023&nbsp;Sugimoto&nbsp;Atsushi&nbsp;Portfolio</small></p>
         </div>
     </footer>
 
+
+    <div class="floating">
+        <a href="#"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+    <script src="https://kit.fontawesome.com/e6e1cd3731.js" crossorigin="anonymous"></script>
+    <script src="/javascript/wow.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./javascript/main.js"></script>
 </body>
