@@ -977,11 +977,21 @@ body.open .header-nav {
     padding: 40vh 0 0;
     height: 700px;
     position: relative;
-    background: url(../images/sp/sp1.jpg) no-repeat center center;
-    background-attachment: fixed;
     max-height: 80vh;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     margin-bottom: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url(../images/sp/sp1.jpg) no-repeat center center;
+      background-attachment: fixed;
+      height: 700px;
+      width: 100%;
+      z-index: -1;
+    }
   }
 
   .about-background,
