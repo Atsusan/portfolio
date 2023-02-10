@@ -84,7 +84,7 @@ img {
   transition: all 0.3s ease;
 }
 .floating i {
-  transform: translateY(-10%);
+  transform: translateY(0%);
 }
 
 @media screen and (max-width: 768px) {
