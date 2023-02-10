@@ -1044,7 +1044,7 @@ body.open .header-nav .nav-list .nav-item {
 }
 @media screen and (max-width: 410px) {
   .header-bg::before {
-    background: url(../images/sp/sp1.jpg) no-repeat center center/cover;
+    background: url(../images/sp/sp1.jpg) no-repeat;
   }
   .about-background {
     background: url(../images/sp/sp3.jpg) no-repeat center center/cover;
