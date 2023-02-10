@@ -1046,6 +1046,12 @@ body.open .header-nav .nav-list .nav-item {
   .header-bg::before {
     background: url(../images/sp/sp1.jpg) no-repeat center center/cover;
   }
+  .about-background {
+    background: url(../images/sp/sp3.jpg) no-repeat center center/cover;
+  }
+  .skills-background {
+    background: url(../images/sp/sp2.jpg) no-repeat center center/cover;
+  }
   .section {
     padding: 10rem 0;
   }
