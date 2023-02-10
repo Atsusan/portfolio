@@ -23,6 +23,7 @@ $('a[href^="#"]').click(function() {
   // .headerクラスがついた要素の高さを取得
   const header = $(".header").innerHeight();
   const headerRepair = 700;
+  const headerSp = 550;
 
   // 移動速度を指定（ミリ秒）
   const speed = 300;
@@ -34,17 +35,34 @@ $('a[href^="#"]').click(function() {
   const target = $("#" == id ? "html" : id);
 
   // ページのトップを基準にターゲットの位置を取得からトップからの距離からヘッダー分の高さを引く
-  const position = $(target).offset().top - header + headerRepair;
+
+  var windowWidth = $(window).width();
+  var windowSm = 768;
+  if (windowWidth <= windowSm) {
+  //横幅768px以下（スマホ）に適用させるJavaScriptを記述
+  let position = $(target).offset().top - header + headerSp;
+  $("html, body").animate(
+    {
+        scrollTop: position
+    },
+    speed
+    );
+    return false;
+  } else {
+  //横幅768px以上（PC、タブレット）に適用させるJavaScriptを記述
+  let position = $(target).offset().top - header + headerRepair;
+  $("html, body").animate(
+    {
+        scrollTop: position
+    },
+    speed
+    );
+    return false;
+  }
 
   // ターゲットの位置までspeedの速度で移動
 
-  $("html, body").animate(
-  {
-      scrollTop: position
-  },
-  speed
-  );
-  return false;
+
 
 });
 
