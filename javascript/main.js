@@ -24,7 +24,7 @@ $('a[href^="#"]').click(function() {
   const header = $(".header").innerHeight();
   const headerRepair = 700;
   const headerPad = 550;
-  const headerSp = 450;
+  const headerSp = 400;
 
   // 移動速度を指定（ミリ秒）
   const speed = 300;
@@ -39,7 +39,7 @@ $('a[href^="#"]').click(function() {
 
   var windowWidth = $(window).width();
   var windowPad =768;
-  var windowSm = 510;
+  var windowSm = 350;
   if (windowWidth <= windowPad) {
   //横幅768px以下（スマホ）に適用させるJavaScriptを記述
     if(windowWidth <= windowSm) {
