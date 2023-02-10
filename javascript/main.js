@@ -24,7 +24,7 @@ $('a[href^="#"]').click(function() {
   const header = $(".header").innerHeight();
   const headerRepair = 700;
   const headerPad = 550;
-  const headerSp = 400;
+  const headerSp = 450;
 
   // 移動速度を指定（ミリ秒）
   const speed = 300;
