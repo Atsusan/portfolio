@@ -1,0 +1,946 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td,
+small,
+button,
+time,
+figure {
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+html {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+li,
+dd {
+	list-style-type: none;
+}
+
+header,
+footer,
+nav,
+section,
+article,
+main,
+aside,
+figure,
+figcaption {
+	display: block;
+}
+
+img {
+	border: none;
+	vertical-align: bottom;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* remの計算 */
+
+body {
+	color: #2F2E2E;
+	font-family: "Lusitana", "Noto Sans JP", "Meiryo", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.6;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+}
+
+.l-inner {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1040px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.u-separate {
+	margin-bottom: 24px;
+	margin-top: 24px;
+}
+
+.u-active-pc {
+	display: none;
+}
+
+.u-active-tab {
+	display: none;
+}
+
+.u-active-sp {
+	display: none;
+}
+
+/* ドロワー共通CSS */
+
+/* ボタンのためのCSS */
+
+.js-openbtn {
+	cursor: pointer;
+	height: 50px;
+	position: fixed;
+	right: 15px;
+	top: 8px;
+	width: 50px;
+	z-index: 999;
+}
+
+/* Xに変化 */
+
+.js-openbtn span {
+	background-color: #fff;
+	border-radius: 2px;
+	display: inline-block;
+	height: 2px;
+	left: 14px;
+	position: absolute;
+	transition: all 0.4s;
+	width: 45%;
+}
+
+.js-openbtn span:nth-of-type(1) {
+	top: 15px;
+}
+
+.js-openbtn span:nth-of-type(2) {
+	top: 23px;
+}
+
+.js-openbtn span:nth-of-type(3) {
+	top: 31px;
+}
+
+.js-openbtn.active span:nth-of-type(1) {
+	left: 18px;
+	top: 18px;
+	transform: translateY(6px) rotate(-45deg);
+	width: 30%;
+}
+
+.js-openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.js-openbtn.active span:nth-of-type(3) {
+	left: 18px;
+	top: 30px;
+	transform: translateY(-6px) rotate(45deg);
+	width: 30%;
+}
+
+/* ナビゲーションのためのCSS */
+
+/* ナビゲーションの縦スクロール */
+
+#js-g-nav.panelactive #js-g-nav-list {
+	-webkit-overflow-scrolling: touch;
+	height: 100vh;
+	overflow: auto; /* ナビの数が増えた場合の縦スクロール処理 */
+	position: fixed;
+	width: 100%;
+	z-index: 900;
+}
+
+/* ナビゲーション */
+
+#js-g-nav ul {
+	left: 50%; /* ナビゲーション天地中央揃え */
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 900;
+}
+
+#js-g-nav li {
+	color: #fff;
+	font-size: 24px;
+}
+
+#js-g-nav li:not(:first-child) {
+	margin-top: 50px;
+}
+
+#js-g-nav li > a {
+	display: block;
+}
+
+/* ここまで ドロワー共通CSS */
+
+#js-g-nav {
+	background: rgba(0, 0, 0, 0.8);
+	height: 100vh; /* ナビの高さ */
+	left: 0; /* position: fixd;にし、z-indexの数値を大きくして前面へ */
+	position: fixed; /* ナビのスタート位置と形状 */
+	top: -120%; /* 動き */
+	transition: all 0.6s;
+	width: 100%;
+	z-index: 900;
+}
+
+/* アクティブクラスがついたら位置を0に */
+
+#js-g-nav.panelactive {
+	top: 0;
+}
+
+/* スキル全体を囲うdiv */
+
+/* スキルの情報 */
+
+.skill-info {
+	display: flex;
+	font-size: 16px;
+	justify-content: space-between;
+	line-height: 1.5;
+	margin-bottom: 10px;
+}
+
+/* スキルの熟練度（パーセンテージ） */
+
+.skill-percentage {
+	opacity: 0; /* 初期状態では透明に */
+	transition: opacity 0.6s;
+}
+
+/* スキルバーの親要素 */
+
+.skill-bar-container {
+	background-color: #f3f3f3; /* スキルバーの背景色 */
+	height: 15px; /* スキルバーの高さ */
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+/* スキルバー本体 */
+
+.skill-bar {
+	background-color: #34e8d7; /* スキルバーの色 */
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transition: width 3s cubic-bezier(0.22, 1, 0.36, 1); /* スキルバーが伸びる速度を調整 */
+	width: 0; /* 初期状態では0 */
+}
+
+/* floating */
+
+.floating {
+	bottom: 40px;
+	font-size: 25px;
+	position: fixed;
+	right: 20px;
+	z-index: 99;
+}
+
+.floating a {
+	align-items: center;
+	border: 3px solid #247297;
+	border-radius: 50%;
+	color: #247297;
+	display: flex;
+	height: 40px;
+	justify-content: center;
+	opacity: 0.9;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	width: 40px;
+}
+
+.floating i {
+	transform: translateY(-5%);
+}
+
+.lum-lightbox {
+	z-index: 500;
+}
+
+.lum-lightbox-inner img {
+	max-width: 100%;
+}
+
+/*== 波紋がふわっと広がる */
+
+.btnripple3 { /*リンクの形状*/
+	display: inline-block;
+	outline: none; /*波紋の基点とするためrelativeを指定*/
+	position: relative;
+	text-decoration: none;
+}
+
+/*波形の設定*/
+
+.btnripple3:hover::before { /*アニメーションの設定*/
+	animation: 1s circleanime2 infinite; /*波形の形状*/
+	border: 1px solid #fff;
+	border-radius: 50%;
+	content: "";
+	height: 60px;
+	left: 0; /*はじめは不透明*/
+	opacity: 1; /*絶対配置で波形の位置を決める*/
+	position: absolute;
+	top: 0;
+	transform: translateX(-50%);
+	width: 60px;
+}
+
+/*波形が広がるアニメーション*/
+
+/*矢印の設定*/
+
+.btnripple3::after {
+	border-right: 1px solid #000;
+	border-top: 1px solid #000;
+	content: "";
+	height: 5px; /*絶対配置で矢印の位置を決める*/
+	position: absolute;
+	right: -20px;
+	top: 30%;
+	transform: rotate(45deg); /*矢印の形状*/
+	width: 5px;
+}
+
+/*  common
+-------------------------------------------------*/
+
+.inner {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.section {
+	margin-bottom: 90px;
+	margin-top: 90px;
+}
+
+.section-title {
+	font-size: 34px;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	margin-bottom: 40px;
+	position: relative;
+	text-align: center;
+}
+
+.section-title::before {
+	background-color: #2F2E2E;
+	bottom: 0;
+	content: "";
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+	width: 120px;
+}
+
+.is-active-pc {
+	display: block;
+}
+
+.is-active-sp {
+	display: none;
+}
+
+/*  header mv 共通
+-------------------------------------------------*/
+
+.bg-container {
+	position: relative;
+}
+
+/*  header
+-------------------------------------------------*/
+
+.header {
+	align-items: center;
+	background-color: #111;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+	display: flex;
+	height: 100px;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+}
+
+.header-inner {
+	align-items: center;
+	display: flex;
+	width: 100%;
+}
+
+.header-logo {
+	color: #fff;
+	font-size: 32px;
+	letter-spacing: 0.05em;
+}
+
+.header-nav {
+	margin-left: auto;
+}
+
+.header-nav-list {
+	display: flex;
+	gap: 40px;
+	justify-content: center;
+}
+
+.header-nav-item-link {
+	color: #fff;
+	display: block;
+}
+
+/*  mv
+-------------------------------------------------*/
+
+/* safari対応 */
+
+.notSafari {
+	background-attachment: fixed !important;
+}
+
+.mv {
+	height: 100vh;
+	position: relative;
+}
+
+.mv-img {
+	background: url(../img/mv-pc.jpg) no-repeat center center/cover;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	height: 100vh;
+	width: 100%;
+}
+
+.mv-readArea {
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	background-color: rgba(0, 0, 0, 0.3);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	display: grid;
+	height: min(100%, 16vw);
+	left: 50%;
+	max-height: 200px;
+	place-items: center;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -40%);
+	width: 66.6666666667%;
+}
+
+.mv-read {
+	color: #fff;
+	font-size: clamp(24px, 5vw, 60px);
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	perspective: 1000;
+	transform: translateZ(0);
+}
+
+.mv-read > span {
+	display: inline-block;
+}
+
+/*  about
+-------------------------------------------------*/
+
+.about-flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.about-head {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	width: 47%;
+}
+
+.about-head > img {
+	width: 100%;
+}
+
+.about-body {
+	width: 47%;
+}
+
+.about-body-text {
+	color: #555;
+	letter-spacing: 0.1em;
+}
+
+/*  works
+-------------------------------------------------*/
+
+.works-heading {
+	font-size: 24px;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	margin-bottom: 20px;
+	margin-top: 40px;
+	position: relative;
+}
+
+.works-heading::before {
+	background-color: #111;
+	content: "";
+	height: 2px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 30px;
+}
+
+.works-list {
+	display: grid;
+	gap: 60px;
+	grid-template-columns: repeat(auto-fit, minmax(330px, 5rem));
+	justify-content: start;
+}
+
+.works-item {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+	transition: all 0.3s;
+}
+
+.works-item:hover {
+	box-shadow: rgba(104, 120, 200, 0.24) 0px 3px 8px;
+}
+
+.works-item-link {
+	display: block;
+	height: 100%;
+}
+
+.works-item-link:hover > .works-item-head > img {
+	transform: scale(1.1);
+}
+
+.works-item-head {
+	display: block;
+	overflow: hidden;
+}
+
+.works-item-head > img {
+	-o-object-fit: cover;
+	object-fit: cover;
+	transition: transform 0.3s;
+	width: 100%;
+}
+
+.works-item-body {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	padding: 4%;
+}
+
+.works-item-body-metaArea {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.works-item-body-meta {
+	border: 1px solid #111;
+	border-radius: 10px;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 1;
+	padding: 2px 9px;
+}
+
+.works-item-body-text {
+	color: #555;
+	font-size: 14px;
+}
+
+.works-more-btnArea {
+	margin-top: 45px;
+	text-align: center;
+}
+
+.works-more-btn {
+	border: 1px solid #111;
+	display: block;
+	margin: 0 auto;
+	max-width: 320px;
+	overflow-x: hidden;
+	padding: 20px 120px;
+	position: relative;
+	width: 100%;
+}
+
+.works-more-btn::before {
+	background-color: #111;
+	content: "";
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease;
+	width: 100%;
+	z-index: -1;
+}
+
+.works-more-btn:hover {
+	color: #fff;
+}
+
+.works-more-btn:hover::before {
+	transform: translateX(0);
+}
+
+.html {
+	border: 1px solid #de4b25;
+}
+
+.js {
+	border: 1px solid #fbd93c;
+}
+
+.wordpress {
+	border: 1px solid #247297;
+}
+
+.photosho {
+	border: 1px solid #872bbb;
+}
+
+.illust {
+	border: 1px solid #ea9419;
+}
+
+/*  skill
+-------------------------------------------------*/
+
+.skill-list {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.skill-item + .skill-item {
+	margin-top: 80px;
+	position: relative;
+}
+
+.skill-item + .skill-item::before {
+	border-top: 2px dashed #247297;
+	content: "";
+	left: 0;
+	position: absolute;
+	top: -40px;
+	width: 100%;
+}
+
+.skill-name {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.skill-text {
+	color: #555;
+	margin-top: 12px;
+}
+
+/*  contact
+-------------------------------------------------*/
+
+.contact-content {
+	text-align: center;
+}
+
+.contact-read {
+	font-size: 34px;
+	letter-spacing: 0.05em;
+}
+
+.contact-snsArea {
+	display: flex;
+	gap: 50px;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.contact-sns-box {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-sns-img {
+	font-size: 32px;
+	transition: transform 0.3s;
+}
+
+.contact-sns-img:hover {
+	transform: scale(1.1);
+}
+
+.contact-sns-mail {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.contact-sns-mail-text {
+	align-items: center;
+	color: #555;
+	display: inline-block;
+	display: flex;
+	font-size: 14px;
+	height: 100%;
+	justify-content: center;
+	margin-left: 10px;
+}
+
+.contact-sns-mail-text > span {
+	height: 100%;
+	margin-left: 2px;
+	margin-right: 2px;
+	width: 10px;
+}
+
+.contact-sns-mail-text > span > img {
+	height: 100%;
+	width: 100%;
+}
+
+/*  footer
+-------------------------------------------------*/
+
+.footer {
+	background-color: #111;
+}
+
+.footer-copyArea {
+	display: grid;
+	place-items: center;
+}
+
+.footer-copy {
+	color: #fff;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+/*  Animate
+-------------------------------------------------*/
+
+/* Works-page
+------------------------------------------------ */
+
+@media screen and (min-width: 1100px) {
+
+.u-hidden-pc {
+	display: none;
+}
+
+.u-active-pc {
+	display: block;
+}
+
+}
+
+@media screen and (max-width: 1200px) {
+
+.works-list {
+	justify-content: center;
+}
+
+}
+
+@media screen and (max-width: 1099px) {
+
+.u-hidden-tab {
+	display: none;
+}
+
+.u-active-tab {
+	display: block;
+}
+
+}
+
+@media screen and (max-width: 800px) {
+
+.works-list {
+	grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+}
+
+}
+
+@media screen and (max-width: 767px) {
+
+.l-inner {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.u-hidden-sp {
+	display: none;
+}
+
+.u-active-sp {
+	display: block;
+}
+
+.inner {
+	padding-left: 4%;
+	padding-right: 4%;
+}
+
+.section {
+	margin-bottom: 60px;
+	margin-top: 60px;
+}
+
+.section-title {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.section-title::before {
+	width: 80px;
+}
+
+.is-active-pc {
+	display: none;
+}
+
+.is-active-sp {
+	display: block;
+}
+
+.header {
+	height: 60px;
+}
+
+.header-logo {
+	font-size: 20px;
+}
+
+.header-nav-list {
+	gap: 20px;
+}
+
+.header-nav-item-link {
+	font-size: 14px;
+}
+
+.mv {
+	height: 70vh;
+	overflow: hidden;
+}
+
+.mv-img {
+	background: url(../img/sp/mv-sp.jpg) no-repeat center center/cover;
+	background-attachment: scroll;
+}
+
+.mv-readArea {
+	width: 80%;
+}
+
+.about-flex {
+	flex-direction: column;
+	gap: 15px;
+}
+
+.about-head {
+	box-shadow: none;
+	width: 100%;
+}
+
+.about-body {
+	width: 100%;
+}
+
+.about-body-text {
+	font-size: 14px;
+}
+
+.skill-name {
+	font-size: 16px;
+}
+
+.skill-text {
+	font-size: 14px;
+}
+
+.contact-read {
+	font-size: 20px;
+}
+
+.contact-snsArea {
+	gap: 30px;
+	margin-top: 40px;
+}
+
+}
+
+@keyframes circleanime2 {
+
+0% {
+	transform: scale(0);
+}
+
+100% {
+	opacity: 0;
+	transform: scale(2);
+}
+
+}
+

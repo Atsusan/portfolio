@@ -1,300 +1,532 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<!-- OGP宣言 -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUGIMOTO ATUSHI</title>
-    <meta name="discription" content="ウェブコーダー,スギモトアツシ（Sugimoto Atsushi）のポートフォリオサイトです。最後まで丁寧にを大切にしながら制作に携わっています。">
-    <meta property="og:url" content="https://sugimoto-atsushi.netlify.app" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="SUGIMOTO ATSUSHI" />
-    <meta property="og:description"
-        content="ウェブコーダー,スギモトアツシ（Sugimoto Atsushi）のポートフォリオサイトです。最後まで丁寧にを大切にしながら制作に携わっています。" />
-    <meta property="og:site_name" content="SUGIMOTO ATSUSHI" />
-    <meta property="og:image" content="https://sugimoto-atsushi.netlify.app/images/sns.jpg" />
-    <!-- favicon -->
-    <link rel="icon" href="./images/favicon-16x16.png">
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css?ver=5.8.2">
-    <!-- wow -->
-    <link rel="stylesheet" href="./css/animate.css">
-    <!-- swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no"><!-- 電話のリンクをしない設定 -->
+	<title>SUGIMOTO ATSUSHI's Portfolio | top-page</title>
+	<meta name="description" content="杉本篤志のポートフォリオサイトです。"><!-- 概要欄 -->
+	<meta property="og:title" content="SUGIMOTO ATSUSHI's Portfolio"><!-- OGPタイトル -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://atsushi-web.site"><!-- OGPサイトURL -->
+	<meta property="og:image" content="https://atsushi-web.site/assets/img/twiiter-card.png"><!-- OGPサムネイル -->
+	<meta property="og:site_name" content="SUGIMOTO ATSUSHI's Portfolio"><!-- OGPサイトネーム -->
+	<meta property="og:description" content="杉本篤志のポートフォリオサイトです。"><!-- OGPサイトの概要欄 -->
+	<meta name="twitter:card" content="summary_large_image"><!-- OGP Twitterカード -->
+	<meta name="robots" content="noindex,nofollow"><!-- indexさせないよう処理 -->
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+	<!-- luminous-lightbox -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous-basic.min.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<!-- FontAwesome -->
+	<script src="https://kit.fontawesome.com/e6e1cd3731.js" crossorigin="anonymous"></script>
+	<!-- luminous-lightbox -->
+	<script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous.min.js"></script>
+	<!-- GSAP -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<!-- main.js -->
+	<script src="./assets/js/script.js" defer></script>
+
+	<!-- ファビコンの設定 -->
+	<link rel="icon" type="image/png" href="./assets/img/favicon/favicon-192.png">
+	<link rel="icon" type="image/png" href="./assets/img/favicon/favicon-180.png">
+	<link rel="icon" type="image/png" href="./assets/img/favicon/favicon-64.png">
 </head>
 
 <body>
+	<div class="bg-container">
+		<header id="header" class="header">
+			<div class="header-inner inner">
+				<h1 class="header-logo">
+					<a href="./">My Portfolio</a>
+				</h1>
+				<!-- /.header-logo -->
+				<nav class="header-nav is-active-pc">
+					<ul class="header-nav-list">
+						<li class="header-nav-item">
+							<a href="#about" class="header-nav-item-link btnripple3">ABOUT</a>
+						</li>
+						<li class="header-nav-item">
+							<a href="#works" class="header-nav-item-link btnripple3">WORKS</a>
+						</li>
+						<li class="header-nav-item">
+							<a href="#skill" class="header-nav-item-link btnripple3">SKILL</a>
+						</li>
+						<li class="header-nav-item">
+							<a href="#contact" class="header-nav-item-link btnripple3">CONTACT</a>
+						</li>
+					</ul>
+					<!-- /.header-nav-list -->
+				</nav>
+				<!-- /.header-nav -->
+				<!-- ドロワーの実装 -->
+				<div class="js-openbtn is-active-sp"><span></span><span></span><span></span></div>
+				<nav id="js-g-nav">
+					<div id="js-g-nav-list">
+						<ul>
+							<li><a href="#about">ABOUT</a></li>
+							<li><a href="#works">WORKS</a></li>
+							<li><a href="#skill">SKILL</a></li>
+							<li><a href="#contact">CONTACT</a></li>
+						</ul>
+					</div>
+				</nav>
+				<!-- / ドロワー実装 -->
+			</div>
+			<!-- /.inner -->
+		</header>
+		<!-- /#header.header -->
+		<div class="mv">
+			<div class="mv-img"></div>
+			<!-- /.mv-img -->
+			<div class="mv-readArea">
+				<p class="mv-read">
+					“Think Different”
+				</p>
+				<!-- /.mv-read -->
+			</div>
+			<!-- /.mv-readArea -->
+		</div>
+		<!-- /.mv -->
+	</div>
+	<!-- /.bg-container -->
 
-    <header class="header">
-        <div class="header-bg"></div>
-        <!-- .container -->
-        <div class="container">
-            <!-- .header-title -->
-            <h1 class="header-title">sugimoto&nbsp;atsushi<br><span>Portfolio</span></h1>
-            <!-- / .header-title -->
+	<main class="content">
+		<section class="section about" id="about">
+			<div class="inner">
+				<h2 class="section-title">ABOUT</h2>
+				<!-- /.section-title -->
+				<div class="about-flex">
+					<div class="about-head animation01">
+						<img src="./assets/img/about-img-pc.jpg" alt="杉本篤志">
+					</div>
+					<div class="about-body animation01">
+						<p class="about-body-text">
+							はじめまして、杉本篤志と申します。
+							<br>
+							このポートフォリオでは、私のこれまでの制作物の一部をご紹介しています。
+							<br>
+							ぜひご覧頂き、どんなウェブサイトでも実現できるよう、
+							お手伝いさせていただければ幸いです。
+						</p>
+						<!-- /.about-body-text -->
+					</div>
+					<!-- /.about-body -->
+				</div>
+			</div>
+			<!-- /.inner -->
+		</section>
+		<!-- /#about.section about -->
+		<section class="section works" id="works">
+			<div class="inner">
+				<h2 class="section-title">WORKS</h2>
+				<!-- /.section-title -->
+				<p class="works-heading">Coding</p>
+				<ul class="works-list">
+					<li class="works-item animation01">
+						<a href="https://lp01-kadai.netlify.app/" class="works-item-link" target="_blank">
+							<div class="works-item-head">
+								<img src="./assets/img/work-img-pc01.jpg" alt="制作事例1">
+							</div>
+							<div class="works-item-body">
+								<div class="works-item-body-metaArea">
+									<span class="works-item-body-meta html">HTML / CSS / Sass</span>
+									<span class="works-item-body-meta js">JavaScript / jQuery</span>
+								</div>
+								<p class="works-item-body-text">
+									制作時間 : 35h
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="works-item animation01">
+						<a href="http://atsushi-web-site.com/" class="works-item-link" target="_blank">
+							<div class="works-item-head">
+								<img src="./assets/img/work-img-pc02.jpg" alt="制作事例2">
+							</div>
+							<div class="works-item-body">
+								<div class="works-item-body-metaArea">
+									<span class="works-item-body-meta html">HTML / CSS / Sass</span>
+									<span class="works-item-body-meta js">JavaScript / jQuery</span>
+									<span class="works-item-body-meta wordpress">PHP / WordPress</span>
+								</div>
+								<p class="works-item-body-text">
+									<br>
+									ユーザー名 : work01
+									<br>
+									PW : work01
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="works-item animation01">
+						<a href="https://rad-blini-f34d3b.netlify.app/" class="works-item-link" target="_blank">
+							<div class="works-item-head">
+								<img src="./assets/img/work-img-pc03.jpg" alt="制作事例3">
+							</div>
+							<div class="works-item-body">
+								<div class="works-item-body-metaArea">
+									<span class="works-item-body-meta html">HTML / CSS / Sass</span>
+									<span class="works-item-body-meta js">JavaScript / jQuery</span>
+								</div>
+								<p class="works-item-body-text">
 
-            <!-- hambarger menu -->
-            <button class="btn-hamburger"><span></span></button>
-            <!-- / hamburger menu -->
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="works-item animation01">
+						<a href="https://d-kadai.netlify.app" class="works-item-link" target="_blank">
+							<div class="works-item-head">
+								<img src="./assets/img/work-img-pc04.jpg" alt="制作事例4">
+							</div>
+							<div class="works-item-body">
+								<div class="works-item-body-metaArea">
+									<span class="works-item-body-meta html">HTML / CSS / Sass</span>
+									<span class="works-item-body-meta js">JavaScript / jQuery</span>
+								</div>
+								<p class="works-item-body-text">
 
-            <!-- header-nav -->
-            <nav class="header-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#about">About</a></li>
-                    <li class="nav-item"><a href="#skills">Skills</a></li>
-                    <li class="nav-item"><a href="#works">Works</a></li>
-                    <li class="nav-item"><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- / .header-nav -->
-        </div>
-        <!-- / .container -->
+								</p>
+							</div>
+						</a>
+					</li>
+					<!-- <li class="works-item animation01">
+                        <a href="http://kunren.stb-log.com" class="works-item-link" target="_blank">
+                            <div class="works-item-head">
+                                <img src="./assets/img/work-img-pc055.jpg" alt="制作事例5">
+                            </div>
+                            <div class="works-item-body">
+                                <div class="works-item-body-metaArea">
+                                    <span class="works-item-body-meta html">HTML / CSS / Sass</span>
+                                    <span class="works-item-body-meta js">JavaScript / jQuery</span>
+                                </div>
+                                <p class="works-item-body-text">
+                                    制作時間 : 108h (6h × 18day)
+                                    <br>
+                                    職業訓練制作実習 チーム制作
+                                    <br>
+                                    ユーザー名 : demo
+                                    <br>
+                                    PW : demo
+                                </p>
+                            </div>
+                        </a>
+                    </li> -->
+					<!-- <li class="works-item animation01">
+                        <a href="https://wp-1.naoki126-web.com/" class="works-item-link" target="_blank">
+                            <div class="works-item-head">
+                                <img src="./assets/img/work-img-pc-06.jpg" alt="制作事例6">
+                            </div>
+                            <div class="works-item-body">
+                                <div class="works-item-body-metaArea">
+                                    <span class="works-item-body-meta html">HTML / CSS / Sass</span>
+                                    <span class="works-item-body-meta js">JavaScript / jQuery</span>
+                                    <span class="works-item-body-meta wordpress">PHP / WordPress</span>
+                                </div>
+                                <p class="works-item-body-text">
+                                    制作時間 : 60h (2h × 30day)
+                                    <br>
+                                    チーム企画
+                                    <br>
+                                    ユーザー名 : demo
+                                    <br>
+                                    PW : demo
+                                </p>
+                            </div>
+                        </a>
+                    </li> -->
+				</ul>
+				<!-- /.works-list -->
 
-    </header>
-    <!-- / .sns -->
-    <main>
+				<p class="works-heading">Design</p>
+				<ul class="works-list">
+					<li class="works-item animation01">
+						<a href="./assets/img/portfolio.png" class="works-item-link luminous">
+							<div class="works-item-head">
+								<img src="./assets/img/work-img-d-01.jpg" alt="Design制作事例1">
+							</div>
+							<div class="works-item-body">
+								<div class="works-item-body-metaArea">
+									<span class="works-item-body-meta html">HTML / CSS / Sass</span>
+									<span class="works-item-body-meta js">JavaScript / jQuery</span>
+									<span class="works-item-body-meta photosho">Photoshop</span>
+								</div>
+								<p class="works-item-body-text">
+									制作時間 : 30h (6h × 5day)
+									<br>
+									デザインからコーディングまで
+								</p>
+							</div>
+						</a>
+					</li>
+					<li class="works-item animation01">
+						<a href="./assets/img/menu.png" class="works-item-link luminous">
+							<div class="works-item-head">
+								<img src="./assets/img/work-img-d-02.jpg" alt="Desing制作事例1">
+							</div>
+							<div class="works-item-body">
+								<div class="works-item-body-metaArea">
+									<span class="works-item-body-meta illust">Illustrator</span>
+								</div>
+								<p class="works-item-body-text">
+									制作時間 : 10h (2h × 5day)
+									<br>
+									知人の店舗オープンに合わせて制作
+								</p>
+							</div>
+						</a>
+					</li>
 
-        <!-- section about -->
-        <section id="about" class="about section">
-            <div class="about-background"></div>
-            <div class="about-container container">
-                <div class="about-cardarea">
-                    <h2 class="section-title about-title">About</h2>
-                    <div class="about-card">
-                        <div class="about-img">
-                            <img src="/images/IMG_6024.jpg" alt="about">
-                        </div>
-                        <div class="about-textarea">
-                            <p class="about-text">
-                                はじめまして、杉本篤志と申します。
-                                <br>
-                                現在、フリーランスのコーダーとして活動をしております。
-                                <br>
-                                <br>
-                                2013年に靴の専門商社の営業を2年経験した後に、妻の実家の家業である運送業のお手伝いをしてきました。
-                                <br>
-                                予てより趣味で始めたコーディングの勉強を本職にしたいと思い、
-                                2022年7月から本格的にオンラインスクール「デイトラ」にて、学習を進め、
-                                2023年1月からフリーランスのコーダーとして活動しております。
-                                <br>
-                                <br>
-                                営業職の時も、運送業の時も「人に話す」ということより、「人の話を聞く」ことを大事にしてきましたので、
-                                お困りごとなどあれば、なんでもご相談ください。
-                                <br>
-                                お客様と一緒に真摯に向き合って最後までやる！と心に決め、今後もがんばってまいります。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-        </section>
-        <!-- / .section about -->
 
+				</ul>
+				<!-- /.works-list -->
+				<!-- <p class="works-heading">Other</p>
+                <ul class="works-list">
+                    <li class="works-item animation01">
+                        <a href="https://atsushi-code-blog.com/" class="works-item-link" target="_blank">
+                            <div class="works-item-head">
+                                <img src="./assets/img/work-img-o-01.jpg" alt="Other制作事例1">
+                            </div>
+                            <div class="works-item-body">
+                                <div class="works-item-body-metaArea">
 
-        <!-- section skills -->
-        <section id="skills" class="section skills">
-            <div class="skills-background"></div>
-            <div class="skills-container container">
-                <div class="skills-cardarea">
-                    <h2 class="section-title skills-title">Skills</h2>
-                    <div class="skills-card">
-                        <div class="skills-img">
-                            <img src="/images/jeff-sheldon-mKxdiW2QEkE-unsplash.jpg" alt="">
-                        </div>
-                        <div class="skills-textarea">
-                            <p class="skills-text-title">Coding&nbsp;Skills</p>
-                            <p class="skills-text">
-                                HTML
-                                CSS
-                                Sass
-                                Javascript
-                                JQuery
-                                gulp
-                                PHP
-                                WordPress
-                            </p>
-                            <p class="skills-text-title">Other</p>
-                            <p class="skills-text">
-                                AdobeXD
-                                Photoshop
-                            </p>
-                        </div>
-                    </div>
-                    <ul class="skills-lists">
-                        <li class="skills-list">
-                            HTMLやCSSを使った静的サイトの作成
-                        </li>
-                        <li class="skills-list">
-                            JavascriptやJQueryを使ったフワッと動くアニメーションの実装
-                        </li>
-                        <li class="skills-list">
-                            PHPとGoogleフォームを使った静的サイトでのコンタクトフォーム実装
-                        </li>
-                        <li class="skills-list">
-                            Wordpressでのオリジナルテーマの実装
-                        </li>
-                    </ul>
-                    <p class="skills-footer-text">
-                        上記のような実装以外にもご対応させて頂きますので、お気軽にご相談ください。
-                        <br>
-                        また、納品後から２週間は不具合や変更などあればご対応させて頂きます。
-                        <br>
-                        <span class="skills-footer-text-span">※ 実装工程が多い追加項目があれば、別途ご請求させて頂きます。</span>
-                    </p>
-                </div>
-        </section>
-
-        <div id="works" class="works-bg-container">
-            <section class="works inner section">
-                <h2 class="section-title works-title wow fadeInUp">Works</h2>
-                <div class="works-card">
-                    <!-- Slider main container -->
-                    <div class="swiper">
-                        <!-- Additional required wrapper -->
-                        <ul class="swiper-wrapper">
-                            <!-- Slides -->
-                            <li class="swiper-slide wow fadeInUp">
-                                <a href="https://atsushi-web-site.com/" class="works-card-item-link">
-                                    <div class="works-card-item-header">
-                                        <img src="/images/screenshot.png" alt="卒業制作">
-                                    </div>
-                                    <div class="works-text-area">
-                                        <p class="works-card-text">WordPress</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="swiper-slide wow fadeInUp">
-                                <a href="https://rad-blini-f34d3b.netlify.app/" class="works-card-item-link">
-                                    <div class="works-card-item-header">
-                                        <img src="/images/image2.png" alt="sobolondemo">
-                                    </div>
-                                    <div class="works-text-area">
-                                        <p class="works-card-text">HTML & CSS & Javascript</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="swiper-slide wow fadeInUp">
-                                <a href="https://d-kadai.netlify.app/" class="works-card-item-link">
-                                    <div class="works-card-item-header">
-                                        <img src="/images/image3.png" alt="中級最終課題">
-                                    </div>
-                                    <div class="works-text-area">
-                                        <p class="works-card-text">HTML & CSS & Javascript</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="swiper-slide wow fadeInUp">
-                                <a href="https://luminous-sable-df623a.netlify.app/" class="works-card-item-link">
-                                    <div class="works-card-item-header">
-                                        <img src="/images/image5.png" alt="初級編LP">
-                                    </div>
-                                    <div class="works-text-area">
-                                        <p class="works-card-text">HTML & CSS & Javascript</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="swiper-slide wow fadeInUp">
-                                <a href="https://sugimoto-gallery-demo-site.netlify.app/" class="works-card-item-link">
-                                    <div class="works-card-item-header">
-                                        <img src="/images/image6.png" alt="ギャラリーサイト">
-                                    </div>
-                                    <div class="works-text-area">
-                                        <p class="works-card-text">HTML & CSS & Javascript</p>
-                                    </div>
-                                </a>
-                            </li>
-
-                        </ul>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination wow fadeInUp"><span></span></div>
-                    </div>
-                    <p class="works-pw">ユーザー名/パスワード&nbsp;「work01」</p>
-                </div>
-                <!-- /.works-card -->
-                <!-- <div class="works-btn-area">
-                    <a href="#" class="btn btn-works"><span>view&nbsp;more</span></a>
+                                </div>
+                                <p class="works-item-body-text">
+                                    制作時間 : 3h × 10day = 30h
+                                    <br>
+                                    Astro.js × Notion × ChatGPT Blog
+                                    <br>
+                                    NotionをCMS化してChatGPTと連携したBLOG
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul> -->
+				<!-- /.works-list -->
+				<!-- 
+                <div class="works-more-btnArea">
+                    <a href="" class="works-more-btn">More</a>
                 </div> -->
-            </section>
-            <!-- /#works.works inner section -->
-        </div>
-        <!-- /.works-bg-container -->
+			</div>
+			<!-- /.inner -->
+		</section>
+		<!-- /#works.section works -->
+		<section class="section skill" id="skill">
+			<div class="inner">
+				<h2 class="section-title">SKILL</h2>
+				<!-- /.section-title -->
+				<ul class="skill-list">
+					<li class="skill-item">
+						<div class="js-skill" data-proficiency="85">
+							<!-- スキル全体を囲う要素。熟練度を0~100の間で記入 -->
+							<div class="skill-info">
+								<p class="skill-name">HTML</p><!-- 名前 -->
 
+								<p class="skill-percentage">
+									<span class="countup"></span>%
+									<!-- 熟練度の数値をJSで動的に表示 -->
+								</p>
+							</div>
 
+							<div class="skill-bar-container">
+								<!-- スキルバーの親要素 -->
+								<div class="skill-bar"></div><!-- スキルバー本体 -->
+							</div>
+						</div>
+						<p class="skill-text">
+							HTML5に準じたマークアップを行います。
+						</p>
+					</li>
+					<li class="skill-item">
+						<div class="js-skill" data-proficiency="80">
+							<!-- スキル全体を囲う要素。熟練度を0~100の間で記入 -->
+							<div class="skill-info">
+								<p class="skill-name">CSS / Sass</p><!-- 名前 -->
 
+								<p class="skill-percentage">
+									<span class="countup"></span>%
+									<!-- 熟練度の数値をJSで動的に表示 -->
+								</p>
+							</div>
 
-        <!-- / .section skills -->
+							<div class="skill-bar-container">
+								<!-- スキルバーの親要素 -->
+								<div class="skill-bar"></div><!-- スキルバー本体 -->
+							</div>
+						</div>
+						<p class="skill-text">
+							CSSでのアニメーション、CSS設計はFLOCSSやBEMで構築することができます。
+							<br>
+							また、Sassでの記述やファイル分割などを行うことができます。
+						</p>
+					</li>
+					<li class="skill-item">
+						<div class="js-skill" data-proficiency="65">
+							<!-- スキル全体を囲う要素。熟練度を0~100の間で記入 -->
+							<div class="skill-info">
+								<p class="skill-name">JavaScript / jQuery</p><!-- 名前 -->
 
-        <!-- section contact -->
-        <section id="contact" class="contact inner">
-            <div class="contact-inner">
-                <div class="contact-head">
-                    <h2 class="section-title contact-title wow fadeInUp">Contact</h2>
-                </div>
-                <form id="js-form"
-                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdh8_BQ_1NiVLgqCsyLA4S8ffGNsCXIq0V2fGwrJNKnQ0i-UQ/formResponse"
-                    class="contact-form" method="post">
-                    <dl class="contact-list">
-                        <div class="contact-item">
-                            <dt class="contact-item-title">お名前</dt>
-                            <dd class="contact-item-input">
-                                <input type="text" name="entry.770330277" placeholder="お名前" required>
-                            </dd>
-                        </div>
-                        <div class="contact-item">
-                            <dt class="contact-item-title">メールアドレス</dt>
-                            <dd class="contact-item-input">
-                                <input type="email" name="entry.1510354538" placeholder="sample@gmail.com">
-                            </dd>
-                        </div>
-                        <div class="contact-item-textarea wow fadeInUp">
-                            <dt class="contact-item-title">ご用件内容</dt>
-                            <dd class="contact-item-input">
-                                <textarea name="entry.519737174"></textarea>
-                            </dd>
-                        </div>
-                    </dl>
-                    <div class="contact-footer">
-                        <div class="contact-footer-submit wow fadeInUp">
-                            <button id="js-submit" class="contact-btn" type="submit">送信する</button>
-                        </div>
-                    </div>
-                </form>
-                <div id="js-success" class="contact-message">
-                    <p>送信完了しました。ありがとうございました。</p>
-                </div>
-                <div id="js-error" class="contact-message -error">
-                    <p>送信失敗しました。ページを更新して再度送信してください。</p>
-                </div>
-            </div>
-            <!-- /.contact-inner -->
-        </section>
-        <!-- /#contact.contact inner section -->
+								<p class="skill-percentage">
+									<span class="countup"></span>%
+									<!-- 熟練度の数値をJSで動的に表示 -->
+								</p>
+							</div>
 
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <a href="https://twitter.com/webcoda_sugimo" class="sns-twitter">
-                <p>Twitter</p>
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <p class="footer-copyright"><small>&copy;&nbsp;2023&nbsp;Sugimoto&nbsp;Atsushi&nbsp;Portfolio</small></p>
-        </div>
-    </footer>
+							<div class="skill-bar-container">
+								<!-- スキルバーの親要素 -->
+								<div class="skill-bar"></div><!-- スキルバー本体 -->
+							</div>
+						</div>
+						<p class="skill-text">
+							JavaScriptやjQueryを使って、CSSより複雑なアニメーションを作成致します。
+							<br>
+							現在、GSAPを使ったアニメーションを勉強中。
+						</p>
+					</li>
+					<li class="skill-item">
+						<div class="js-skill" data-proficiency="40">
+							<!-- スキル全体を囲う要素。熟練度を0~100の間で記入 -->
+							<div class="skill-info">
+								<p class="skill-name">PHP</p><!-- 名前 -->
 
+								<p class="skill-percentage">
+									<span class="countup"></span>%
+									<!-- 熟練度の数値をJSで動的に表示 -->
+								</p>
+							</div>
 
-    <div class="floating">
-        <a href="#"><i class="fas fa-chevron-up"></i></a>
-    </div>
+							<div class="skill-bar-container">
+								<!-- スキルバーの親要素 -->
+								<div class="skill-bar"></div><!-- スキルバー本体 -->
+							</div>
+						</div>
+						<p class="skill-text">
+							PHPは基本的な構文を使ってWordPressを制御することができます。
+						</p>
+					</li>
+					<li class="skill-item">
+						<div class="js-skill" data-proficiency="40">
+							<!-- スキル全体を囲う要素。熟練度を0~100の間で記入 -->
+							<div class="skill-info">
+								<p class="skill-name">My SQL</p><!-- 名前 -->
 
-    <script src="https://kit.fontawesome.com/e6e1cd3731.js" crossorigin="anonymous"></script>
-    <script src="/javascript/wow.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./javascript/main.js"></script>
+								<p class="skill-percentage">
+									<span class="countup"></span>%
+									<!-- 熟練度の数値をJSで動的に表示 -->
+								</p>
+							</div>
+
+							<div class="skill-bar-container">
+								<!-- スキルバーの親要素 -->
+								<div class="skill-bar"></div><!-- スキルバー本体 -->
+							</div>
+						</div>
+						<p class="skill-text">
+							WordPressの記事作成、複製、削除、ログインIDやパスワードの変更、バックアップなどをMy SQL上で行うことができます。
+						</p>
+					</li>
+					<li class="skill-item">
+						<div class="js-skill" data-proficiency="60">
+							<!-- スキル全体を囲う要素。熟練度を0~100の間で記入 -->
+							<div class="skill-info">
+								<p class="skill-name">WordPress</p><!-- 名前 -->
+
+								<p class="skill-percentage">
+									<span class="countup"></span>%
+									<!-- 熟練度の数値をJSで動的に表示 -->
+								</p>
+							</div>
+
+							<div class="skill-bar-container">
+								<!-- スキルバーの親要素 -->
+								<div class="skill-bar"></div><!-- スキルバー本体 -->
+							</div>
+						</div>
+						<p class="skill-text">
+							独自のテーマを作成することができます。フルコーディングからお客様が簡単に制御できるようカスタム投稿・カスタムフィールド・カスタムタクソノミー、さらにはSEO対策からコンタクトフォームの実装などを行います。
+						</p>
+					</li>
+					<li class="skill-item">
+						<div class="js-skill" data-proficiency="20">
+							<!-- スキル全体を囲う要素。熟練度を0~100の間で記入 -->
+							<div class="skill-info">
+								<p class="skill-name">Photoshop / Illustrator</p><!-- 名前 -->
+
+								<p class="skill-percentage">
+									<span class="countup"></span>%
+									<!-- 熟練度の数値をJSで動的に表示 -->
+								</p>
+							</div>
+
+							<div class="skill-bar-container">
+								<!-- スキルバーの親要素 -->
+								<div class="skill-bar"></div><!-- スキルバー本体 -->
+							</div>
+						</div>
+						<p class="skill-text">
+							Photoshopを使い、画像のリサイズや加工、調整からデザインカンプ作成まで可能です。 Illustratorでは簡単な図形のSVGなどの画像生成からメニュー表などを作成可能です。
+						</p>
+					</li>
+					<li class="skill-item">
+						<p class="skill-name">Other</p><!-- 名前 -->
+						<p class="skill-text">
+							Git / Github (チームでの制作経験あり) , gulp , Adobe XD・Figmaを使ってのコーディングなど
+						</p>
+					</li>
+				</ul>
+			</div>
+			<!-- /.inner -->
+		</section>
+		<!-- /#skill.section skill -->
+		<section class="section contact" id="contact">
+			<div class="inner">
+				<h2 class="section-title">CONTACT</h2>
+				<!-- /.section-title -->
+				<div class="contact-content">
+					<p class="contact-read">お問い合わせはこちら</p>
+					<div class="contact-snsArea">
+						<a class="contact-sns-box" href="https://twitter.com/webcoda_sugimo" target="_blank">
+							<span class="contact-sns-twitter">Twitter</span>
+							<div class="contact-sns-img">
+								<i class="fa-brands fa-square-twitter"></i>
+							</div>
+						</a>
+						<div class="contact-sns-box">
+							<span class="contact-sns-mailArea">Mail</span>
+							<div class="contact-sns-mail">
+								<p class="contact-sns-mail-text">as2k.sugimoto<span><img src="./assets/img/mark.svg" alt="アットマーク"></span>gmail.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.contact-content -->
+			</div>
+			<!-- /.inner -->
+		</section>
+		<!-- /#contact.section contact -->
+	</main>
+	<!-- /.content -->
+	<footer class="footer">
+		<p class="footer-copyArea">
+			<small class="footer-copy">&copy; SUGIMOTO ATSUSHI's Portfolio</small>
+		</p>
+	</footer>
+	<!-- /.footer -->
+
+	<div class="floating">
+		<a href="#"><i class="fas fa-chevron-up"></i></a>
+	</div>
 </body>
 
 </html>
